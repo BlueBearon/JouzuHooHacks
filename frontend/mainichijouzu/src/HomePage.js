@@ -7,12 +7,25 @@ import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import backgroundImage from './HomePageBanner.jpg';
 import { Typography } from '@mui/material';
+import { darkContext } from './App';
 
 function HomePage() {
 
+    const useDark = React.useContext(darkContext).darkMode;
+
+
+
     return(
 
-        <Box>
+        <Box
+        sx={{
+            color: useDark ? '#f5f3e7' : 'black',
+            backgroundColor: useDark ? '#333333' : 'white',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+        }}
+        >
 
             <Box
                 sx={{
@@ -28,6 +41,7 @@ function HomePage() {
                     fontSize: '3rem',
                     color: 'white',
                     textAlign: 'center',
+                    width: '100%',
                 }}
             >
 
@@ -50,7 +64,15 @@ function HomePage() {
 
             </Box>
 
-            <Accordion>
+            <Accordion
+
+                sx={{
+                    color: useDark ? '#f5f3e7' : 'black',
+                    backgroundColor: useDark ? '#333333' : 'white',
+                    width: '70vw',
+                    marginTop: '2rem',
+                }}
+            >
 
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -75,7 +97,13 @@ function HomePage() {
                     頑張りましょう!Let's do our best!
                 </AccordionDetails>
             </Accordion>
-            <Accordion>
+            <Accordion
+            sx={{
+                color: useDark ? '#f5f3e7' : 'black',
+                backgroundColor: useDark ? '#333333' : 'white',
+                width: '70vw',
+            }}
+            >
 
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
@@ -99,7 +127,13 @@ function HomePage() {
                 </AccordionDetails>
             </Accordion>
 
-            <Accordion>
+            <Accordion
+            sx={{
+                color: useDark ? '#f5f3e7' : 'black',
+                backgroundColor: useDark ? '#333333' : 'white',
+                width: '70vw',
+            }}
+            >
 
                 <AccordionSummary
                     expandIcon={<ExpandMoreIcon />}
